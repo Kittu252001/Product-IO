@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:product_io_assignment/Account.dart';
 import 'package:product_io_assignment/Home.dart';
 import 'package:product_io_assignment/cart.dart';
+// import 'package:product_io_assignment/cart.dart';
+import 'package:product_io_assignment/list.dart';
 import 'package:product_io_assignment/search.dart';
 
 class Bottompage extends StatefulWidget {
-  Bottompage({Key? key}) : super(key: key);
-
   @override
   _BottompageState createState() => _BottompageState();
 }
@@ -15,10 +15,12 @@ class Bottompage extends StatefulWidget {
 class _BottompageState extends State<Bottompage> {
   int currentIndex = 0;
   final screens = [
-    Home(),
+    MyHomePage(
+      title: '',
+    ),
     search(),
-    cart(),
-    account(),
+    List(),
+    profilepage()
   ];
 
   @override
@@ -40,14 +42,14 @@ class _BottompageState extends State<Bottompage> {
           ),
           BottomNavyBarItem(
             icon: Icon(
-              Icons.event_note_sharp,
+              Icons.search,
             ),
             activeColor: Colors.indigo,
             inactiveColor: Colors.grey,
             title: Text('Search'),
           ),
           BottomNavyBarItem(
-            icon: Icon(Icons.health_and_safety),
+            icon: Icon(Icons.shopping_cart),
             title: Text('Cart'),
             activeColor: Colors.indigo,
             inactiveColor: Colors.grey,
